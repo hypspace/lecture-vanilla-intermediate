@@ -1,6 +1,7 @@
-import { acquireReading, baseRate } from './1-10.js'
+import { acquireReading, enrichReading } from './1-10.js'
 
-const aReading = acquireReading()
+const rawReading = acquireReading()
 
-const baseCharge = baseRate(aReading.month, aReading.year) * aReading.quantity
-console.log(baseCharge)
+const reading = enrichReading(rawReading)
+console.log(reading.baseCharge)
+console.log(reading.taxableCharge)

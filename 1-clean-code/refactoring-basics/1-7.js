@@ -1,6 +1,6 @@
-let a = height * width
+let area = width * height
 
-const cpyNm = 'microsoft'
+const company = 'microsoft'
 
-let tpHd = 'noname'
-let result = `<h1>${tpHd}</h1>`
+let title = 'noname'
+let result = `<h1>${title}</h1>`
