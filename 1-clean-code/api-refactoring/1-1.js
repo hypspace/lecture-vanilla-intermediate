@@ -1,5 +1,5 @@
 // 예제 1
-function totalOutstandingAndSendBill() {
+function totalOutstanding() {
   const result = customer.invoices.reduce(
     (total, each) => each.amount + total,
     0
@@ -8,15 +8,22 @@ function totalOutstandingAndSendBill() {
   return result
 }
 
+function sendBill() {
+  // ...
+}
+
 // 예제 2
 export function alertForMiscreant(people, alarm) {
+  const miscreant = findMiscreant(people)
+  setOffAlarms(alarm, miscreant)
+}
+
+function findMiscreant(people) {
   for (const p of people) {
     if (p === 'Don') {
-      setOffAlarms(alarm, p)
       return 'Don'
     }
     if (p === 'John') {
-      setOffAlarms(alarm, p)
       return 'John'
     }
   }
