@@ -4,7 +4,16 @@ export class Site {
   }
 
   get customer() {
-    return this._customer
+    return this._customer === 'unknown'
+      ? new UnknownCustomer()
+      : new Customer(this._customer)
+  }
+}
+
+class UnknownCustomer extends Customer {
+  constructor() {}
+  get name() {
+    return 'occupant'
   }
 }
 
